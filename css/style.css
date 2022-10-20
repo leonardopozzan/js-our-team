@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root{
-    --rosa: #F6F4F0;
+    --rosa: #f1ece2;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -23,10 +23,13 @@ img{
     flex-wrap: wrap;
 }
 .item{
-    width: calc(100% / 3);
-    padding: 15px;
+    width: calc(100% / 3 - 30px);
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
 }
 .name{
+    margin-top: 1.2rem;
     text-align: center;
     font-size: 1.5rem;
     font-style: italic;
@@ -35,5 +38,4 @@ img{
 .role{
     text-align: center;
     font-size: 1.1rem;
-
 }
