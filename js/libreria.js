@@ -11,6 +11,11 @@ function addElementClassHTML(tagElement, className, fatherElement){
     return tag;
 }
 
+//funzione che pulisce l'inneHTML
+function cancelInnerHTML(div){
+    div.innerHTML = '';
+}
+
 //funzione che aggiunge un nuovo componente
 function addComponent(element){
     const card = addElementClassHTML('div','item',cards);
@@ -52,11 +57,19 @@ function addComponentBeta(element){
 
 //funzione che aggiunge un nuovo componente con immagine casuale
 function createComponent(){
+    //pulisco l'eventuale campo del messaggio d'errore
+    message.innerHTML= '';
+
     const realName = document.querySelector('#real-name').value;
     const role = document.querySelector('#role').value;
+
+    if(realName == '' || role == ''){
+        setTimeout(cancelInnerHTML,3000,message);
+        message.innerHTML= 'Inserisci un nome e un ruolo';
+        return;
+    }
     const randomNumber = getRandomNumber(1,50);
 
-    
     const element = {
         'realName': `${realName}`,         
         'role': `${role}`,         
@@ -68,3 +81,4 @@ function createComponent(){
     document.querySelector('#real-name').value = '';
     document.querySelector('#role').value = '';
 }
+

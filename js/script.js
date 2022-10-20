@@ -57,6 +57,7 @@ for (let element of team){
 
 //prendo il container e gli appendo il div che conterrà le carte
 const container = document.querySelector('.container');
+const message = document.querySelector('.message');
 const cards = addElementClassHTML('div','cards',container);
 
 for (let element of team){
