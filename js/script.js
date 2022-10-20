@@ -12,7 +12,7 @@
 // Organizzare i singoli membri in card/schede e stilarli a vostro gusto :faccia_leggermente_sorridente:
 // BONUS 3:
 // Aggiungere attraverso un form un membro al team
-
+//https://picsum.photos/400/429?random=1
 
 
 const team = [
@@ -48,32 +48,22 @@ const team = [
     },  
 ];
 
+//stampo la classe in console
 for (let element of team){
     for(let key in element){
         console.log(`${key}: ${element[key]}`)
     }
 }
 
+//prendo il container e gli appendo il div che conterrà le carte
 const container = document.querySelector('.container');
 const cards = addElementClassHTML('div','cards',container);
 
-
 for (let element of team){
-    const card = addElementClassHTML('div','item',cards);
-    for(let key in element){
-        if(key == 'realName'){
-            const innerCard = addElementClassHTML('div','name',card);
-            innerCard.innerHTML = `${element[key]}`;
-        }else if(key == 'role'){
-            const innerCard = addElementClassHTML('div','role',card);
-            innerCard.innerHTML = `${element[key]}`;
-        }else if(key == 'photo'){
-            const innerCard = document.createElement('div');
-            innerCard.classList.add('photo');
-            innerCard.innerHTML = `<img src="img/${element[key]}">`;
-            card.prepend(innerCard);
-        }
-    }
+    addComponent(element);
 }
+
+const btn = document.querySelector('#enter');
+btn.addEventListener('click' , createComponent);
 
 
