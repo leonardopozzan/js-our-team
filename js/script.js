@@ -54,10 +54,26 @@ for (let element of team){
     }
 }
 
-const container = document.querySelector('.container')
+const container = document.querySelector('.container');
+const cards = addElementClassHTML('div','cards',container);
+
+
 for (let element of team){
+    const card = addElementClassHTML('div','item',cards);
     for(let key in element){
-        const mydiv = addElementClassHTML('div','',container);
-        mydiv.innerHTML = `${key}: ${element[key]}`;
+        if(key == 'realName'){
+            const innerCard = addElementClassHTML('div','name',card);
+            innerCard.innerHTML = `${element[key]}`;
+        }else if(key == 'role'){
+            const innerCard = addElementClassHTML('div','role',card);
+            innerCard.innerHTML = `${element[key]}`;
+        }else if(key == 'photo'){
+            const innerCard = document.createElement('div');
+            innerCard.classList.add('photo');
+            innerCard.innerHTML = `<img src="img/${element[key]}">`;
+            card.prepend(innerCard);
+        }
     }
 }
+
+
