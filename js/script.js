@@ -9,9 +9,10 @@
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
 // BONUS 2:
-// Organizzare i singoli membri in card/schede e stilarli a vostro gusto :faccia_leggermente_sorridente:
+// Organizzare i singoli membri in card/schede e stilarli a vostro gusto :
 // BONUS 3:
 // Aggiungere attraverso un form un membro al team
+
 //https://picsum.photos/400/429?random=1
 
 
